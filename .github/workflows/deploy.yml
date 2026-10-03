@@ -31,13 +31,13 @@ jobs:
 
       - name: Build Assignment 4
         run: |
-          cd Assignment_04_Profile_Card
+          cd Assignment_04_ProfileCard
           npm ci
           npm run build
 
       - name: Build Assignment 5
         run: |
-          cd Assignment_05_Controlled_Form
+          cd Assignment_05_ControlledForm
           npm ci
           npm run build
 
