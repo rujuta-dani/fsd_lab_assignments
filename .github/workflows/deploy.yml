@@ -1,0 +1,106 @@
+
+name: Deploy All Assignments to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build Assignment 4
+        run: |
+          cd Assignment_04_Profile_Card
+          npm ci
+          npm run build
+
+      - name: Build Assignment 5
+        run: |
+          cd Assignment_05_Controlled_Form
+          npm ci
+          npm run build
+
+      - name: Build Assignment 6
+        run: |
+          cd Assignment_06_Counter
+          npm ci
+          npm run build
+
+      - name: Assemble website
+        run: |
+          mkdir -p _site
+
+          cp -r Assignment_01_Calculator _site/
+          cp -r Assignment_02_ToDo _site/
+          cp -r Assignment_03_Form_Validation _site/
+
+          mkdir -p _site/Assignment_04_Profile_Card
+          mkdir -p _site/Assignment_05_Controlled_Form
+          mkdir -p _site/Assignment_06_Counter
+
+          cp -r Assignment_04_Profile_Card/dist/. _site/Assignment_04_Profile_Card/
+          cp -r Assignment_05_Controlled_Form/dist/. _site/Assignment_05_Controlled_Form/
+          cp -r Assignment_06_Counter/dist/. _site/Assignment_06_Counter/
+
+          cat > _site/index.html <<'EOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>FSD Lab Assignments</title>
+          </head>
+          <body>
+            <h1>FSD Lab Assignments</h1>
+            <ul>
+              <li><a href="Assignment_01_Calculator/">Assignment 1 - Calculator</a></li>
+              <li><a href="Assignment_02_ToDo/">Assignment 2 - To-Do List</a></li>
+              <li><a href="Assignment_03_Form_Validation/">Assignment 3 - Form Validation</a></li>
+              <li><a href="Assignment_04_Profile_Card/">Assignment 4 - Profile Card</a></li>
+              <li><a href="Assignment_05_Controlled_Form/">Assignment 5 - Controlled Form</a></li>
+              <li><a href="Assignment_06_Counter/">Assignment 6 - Counter</a></li>
+            </ul>
+          </body>
+          </html>
+          EOF
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
