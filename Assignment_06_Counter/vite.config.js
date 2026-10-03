@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/FSD_LCA_Assignments/Assignment_06_Counter/',
+  base: '/fsd_lab_assignments/Assignment_06_Counter/',
 })
