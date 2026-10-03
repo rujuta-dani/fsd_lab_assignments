@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/FSD_LCA_Assignments/Assignment_05_Controlled_Form/',
+  base: '/FSD_LCA_Assignments/Assignment_05_ControlledForm/',
 })

@@ -1,4 +1,3 @@
-
 name: Deploy All Assignments to GitHub Pages
 
 on:
@@ -59,8 +58,8 @@ jobs:
           mkdir -p _site/Assignment_05_ControlledForm
           mkdir -p _site/Assignment_06_Counter
 
-          cp -r Assignment_04_ProfileCard/dist/. _site/Assignment_04_Profile_Card/
-          cp -r Assignment_05_ControlledForm/dist/. _site/Assignment_05_Controlled_Form/
+          cp -r Assignment_04_ProfileCard/dist/. _site/Assignment_04_ProfileCard/
+          cp -r Assignment_05_ControlledForm/dist/. _site/Assignment_05_ControlledForm/
           cp -r Assignment_06_Counter/dist/. _site/Assignment_06_Counter/
 
           cat > _site/index.html <<'EOF'
