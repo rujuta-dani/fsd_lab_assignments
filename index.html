@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSD Lab Assignments</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6fb;
+            color: #222;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4338ca, #7c3aed);
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 12px;
+            font-size: 36px;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .assignments {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .number {
+            background: #ede9fe;
+            color: #5b21b6;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .card h2 {
+            font-size: 21px;
+            margin: 5px 0 10px;
+        }
+
+        .card p {
+            color: #555;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .technology {
+            font-size: 13px;
+            color: #555;
+            background: #f1f5f9;
+            padding: 7px 10px;
+            border-radius: 6px;
+            margin-bottom: 18px;
+        }
+
+        .card a {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            text-decoration: none;
+            padding: 11px 18px;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+
+        .card a:hover {
+            background: #3730a3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px 15px;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>FSD Lab Assignments</h1>
+        <p>My Full Stack Development Lab Projects</p>
+        <p>HTML · CSS · JavaScript · React</p>
+    </header>
+
+    <main class="container">
+        <div class="assignments">
+
+            <section class="card">
+                <span class="number">Assignment 01</span>
+                <h2>JavaScript Calculator</h2>
+                <p>A calculator that performs addition, subtraction,
+                   multiplication, and division.</p>
+                <span class="technology">HTML · CSS · JavaScript</span>
+                <a href="Assignment_01_Calculator/">Open Assignment →</a>
+            </section>
+
+            <section class="card">
+                <span class="number">Assignment 02</span>
+                <h2>DOM To-Do List</h2>
+                <p>Add tasks, mark them as completed, and delete tasks
+                   using DOM manipulation.</p>
+                <span class="technology">JavaScript · DOM</span>
+                <a href="Assignment_02_ToDoList/">Open Assignment →</a>
+            </section>
+
+            <section class="card">
+                <span class="number">Assignment 03</span>
+                <h2>Form Validation</h2>
+                <p>Validate name, email, phone number, and password
+                   with appropriate error messages.</p>
+                <span class="technology">HTML · CSS · JavaScript</span>
+                <a href="Assignment_03_FormValidation/">Open Assignment →</a>
+            </section>
+
+            <section class="card">
+                <span class="number">Assignment 04</span>
+                <h2>React Profile Card</h2>
+                <p>A reusable profile card that displays a person's
+                   name, image, and description using Props.</p>
+                <span class="technology">React · Props · Vite</span>
+                <a href="Assignment_04_ProfileCard/">Open Assignment →</a>
+            </section>
+
+            <section class="card">
+                <span class="number">Assignment 05</span>
+                <h2>Controlled React Form</h2>
+                <p>A controlled form that displays user-entered
+                   information in real time using React state.</p>
+                <span class="technology">React · useState · Vite</span>
+                <a href="Assignment_05_ControlledForm/">Open Assignment →</a>
+            </section>
+
+            <section class="card">
+                <span class="number">Assignment 06</span>
+                <h2>React Counter</h2>
+                <p>A counter application with increment, decrement,
+                   and reset buttons using the useState Hook.</p>
+                <span class="technology">React · useState · Vite</span>
+                <a href="Assignment_06_Counter/">Open Assignment →</a>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>FSD Lab Assignments · Built with HTML, CSS, JavaScript and React</p>
+    </footer>
+</body>
+</html>

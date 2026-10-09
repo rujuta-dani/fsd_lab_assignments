@@ -62,27 +62,7 @@ jobs:
           cp -r Assignment_05_ControlledForm/dist/. _site/Assignment_05_ControlledForm/
           cp -r Assignment_06_Counter/dist/. _site/Assignment_06_Counter/
 
-          cat > _site/index.html <<'EOF'
-          <!DOCTYPE html>
-          <html lang="en">
-          <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>FSD Lab Assignments</title>
-          </head>
-          <body>
-            <h1>FSD Lab Assignments</h1>
-            <ul>
-              <li><a href="Assignment_01_Calculator/">Assignment 1 - Calculator</a></li>
-              <li><a href="Assignment_02_ToDoList/">Assignment 2 - To-Do List</a></li>
-              <li><a href="Assignment_03_FormValidation/">Assignment 3 - Form Validation</a></li>
-              <li><a href="Assignment_04_ProfileCard/">Assignment 4 - Profile Card</a></li>
-              <li><a href="Assignment_05_ControlledForm/">Assignment 5 - Controlled Form</a></li>
-              <li><a href="Assignment_06_Counter/">Assignment 6 - Counter</a></li>
-            </ul>
-          </body>
-          </html>
-          EOF
+          cp index.html _site/index.html
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
