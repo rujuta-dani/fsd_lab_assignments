@@ -1,81 +1,71 @@
+
+/* Pastel Mint To-Do Theme */
+:root {
+    --theme-bg: #f1faf5;
+    --theme-card: #ffffff;
+    --theme-primary: #a8dbc0;
+    --theme-hover: #8bc9a8;
+    --theme-text: #315b47;
+    --theme-border: #d2ecdd;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    min-height: 100vh;
+    background: var(--theme-bg);
+    color: var(--theme-text);
 }
 
-.todo-container {
-    background-color: white;
+.todo-container,
+.todo-app,
+.container {
+    background: var(--theme-card);
+    border: 1px solid var(--theme-border);
+    border-radius: 22px;
+    box-shadow: 0 8px 24px #52896b14;
+}
 
-    width: 450px;
-
-    padding: 30px;
-
+button {
+    background: #dff3e7;
+    color: var(--theme-text);
+    border: 1px solid #c8e8d5;
     border-radius: 10px;
-
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-h1 {
-    text-align: center;
-}
-
-.input-container {
-    display: flex;
-    gap: 10px;
-}
-
-#taskInput {
-    flex: 1;
-
-    padding: 10px;
-
-    font-size: 16px;
-}
-
-#addTaskButton {
-    padding: 10px 15px;
-
+    padding: 10px 16px;
     cursor: pointer;
+    transition: background 0.2s;
 }
 
-#taskList {
-    list-style: none;
-
-    padding: 0;
-
-    margin-top: 20px;
+button:hover {
+    background: #c9ead7;
 }
 
-.task {
-    display: flex;
+input {
+    background: #fbfffc;
+    color: var(--theme-text);
+    border: 1px solid #cde7d7;
+    border-radius: 10px;
+    padding: 11px;
+    max-width: 100%;
+}
 
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 10px;
-
+li,
+.todo-item {
+    background: #f4fbf6;
+    border: 1px solid #e1f1e6;
+    border-radius: 10px;
+    padding: 12px;
     margin-bottom: 10px;
-
-    background-color: #eeeeee;
-
-    border-radius: 5px;
 }
 
-.task.completed span {
-    text-decoration: line-through;
-    color: gray;
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #75b994;
+    outline-offset: 2px;
 }
 
-.task-buttons button {
-    margin-left: 5px;
-
-    padding: 5px 8px;
-
-    cursor: pointer;
+@media (max-width: 480px) {
+    .todo-container,
+    .todo-app,
+    .container {
+        width: 100%;
+        padding: 16px;
+    }
 }

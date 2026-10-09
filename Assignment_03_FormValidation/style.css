@@ -1,85 +1,82 @@
+
+/* Pastel Blush Form Validation Theme */
+:root {
+    --theme-bg: #fff5f8;
+    --theme-card: #ffffff;
+    --theme-primary: #e9a8be;
+    --theme-hover: #dc8eaa;
+    --theme-text: #704254;
+    --theme-border: #f2d6e0;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    min-height: 100vh;
+    background: var(--theme-bg);
+    color: var(--theme-text);
 }
 
-.form-container {
-    background-color: white;
-
-    width: 400px;
-
-    padding: 30px;
-
-    border-radius: 10px;
-
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-h1 {
-    text-align: center;
-    margin-bottom: 25px;
+form,
+.form-container,
+.container {
+    background: var(--theme-card);
+    border: 1px solid var(--theme-border);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px #ad668014;
 }
 
 label {
-    display: block;
-
-    margin-top: 15px;
-    margin-bottom: 5px;
-
-    font-weight: bold;
+    color: var(--theme-text);
+    font-weight: 600;
 }
 
-input {
+input,
+textarea,
+select {
     width: 100%;
-
-    padding: 10px;
-
-    box-sizing: border-box;
-
-    border: 1px solid #ccc;
-
-    border-radius: 5px;
-
-    font-size: 15px;
-}
-
-input:focus {
-    outline: none;
-    border-color: #555;
-}
-
-small {
-    display: block;
-
-    margin-top: 5px;
-
-    min-height: 18px;
-}
-
-button {
-    width: 100%;
-
+    max-width: 100%;
     padding: 12px;
-
-    margin-top: 20px;
-
-    border: none;
-
-    border-radius: 5px;
-
-    cursor: pointer;
-
-    font-size: 16px;
+    border: 1px solid #e8c6d3;
+    border-radius: 10px;
+    background: #fffafd;
+    color: var(--theme-text);
 }
 
-#successMessage {
-    text-align: center;
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid #d99ab1;
+    border-color: #d99ab1;
+}
 
-    margin-top: 15px;
+button,
+input[type="submit"] {
+    background: #f5dce6;
+    color: #704254;
+    border: 1px solid #ebc5d4;
+    border-radius: 10px;
+    padding: 11px 18px;
+    cursor: pointer;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background: #edc6d6;
+}
+
+.error,
+.error-message {
+    color: #b42345;
+}
+
+.success,
+.success-message {
+    color: #28744e;
+}
+
+@media (max-width: 480px) {
+    form,
+    .form-container,
+    .container {
+        width: 100%;
+        padding: 18px;
+    }
 }

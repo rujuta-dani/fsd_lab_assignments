@@ -46,3 +46,75 @@ button {
     cursor: pointer;
     font-size: 15px;
 }
+
+
+/* Pastel Lilac Counter Theme */
+:root {
+    --theme-bg: #faf4fd;
+    --theme-card: #ffffff;
+    --theme-primary: #d8b8e7;
+    --theme-hover: #c69ad9;
+    --theme-text: #644873;
+    --theme-border: #ebd9f3;
+}
+
+body {
+    background: var(--theme-bg);
+    color: var(--theme-text);
+}
+
+#root {
+    min-height: 100vh;
+}
+
+.counter,
+.counter-container,
+.container {
+    background: var(--theme-card);
+    border: 1px solid var(--theme-border);
+    border-radius: 24px;
+    box-shadow: 0 10px 28px #8e62a014;
+}
+
+button {
+    background: #efdef7;
+    color: var(--theme-text);
+    border: 1px solid #e1c9ee;
+    border-radius: 12px;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background: #e1c8f0;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:focus-visible {
+    outline: 3px solid #b183ca;
+    outline-offset: 2px;
+}
+
+h1,
+h2,
+.counter-value {
+    color: #79558d;
+}
+
+@media (max-width: 480px) {
+    .counter,
+    .counter-container,
+    .container {
+        width: 100%;
+        padding: 18px;
+    }
+
+    button {
+        padding: 10px 14px;
+    }
+}
